@@ -22,8 +22,10 @@ function _init()
 		dialog_o=nil,
 		dialog_oc=nil,
 		day=6,
+		switchcnt=0,
 		flag={
-			hastalk=false
+			hastalk=false,
+			know_plan=false
 		}
 	}
 	flg={
@@ -127,6 +129,50 @@ function _init()
 			p='yan prince dan',
 			c='please go to your residence for rest, we will discuss the plan tomorrow.'
 		}},
+		dan_3={{
+			p='yan prince dan',
+			c='here you are, let\'s continue the topic of assassinating king qin.'
+		},{
+			p='yan prince dan',
+			c='king qin is very vigilant, and it is impossible to approach him without a valid reason.'
+		},{
+			p='yan prince dan',
+			c='fan yuqi, the general of the qin state, participated in the rebellion and defected to our yan state.'
+		},{
+			p='yan prince dan',
+			c='if you use him as bait, you will definitely get a chance to get close to king qin.'
+		},{
+			p='yan prince dan',
+			c='you can discuss with fan yuqi. fan yuqi hates king qin, he will agree our plan.'
+		},{
+			p='yan prince dan',
+			c='also, you also need to find a weapon that can assassinate king qin.'
+		},{
+			p='yan prince dan',
+			c='king qin\'s city is not allowed to bring weapons, so you need to find a weapon with good concealment.'
+		},{
+			p='yan prince dan',
+			c='you can go to the blacksmith\'s shop.'
+		},{
+			p='yan prince dan',
+			c='and if some can come with you assassinate king qin will be better.'
+		},{
+			p='yan prince dan',
+			c='rumor spread there is a man named qin wuyang on the street with extraordinary courage.'
+		},{
+			p='yan prince dan',
+			c='maybe he can be your helper.'
+		},{
+			p='yan prince dan',
+			c='but i don\'t know where this person is, you can go to the tavern to find out.'
+		},{
+			p='yan prince dan',
+			c='just prepare for the assassination of king qin, if you have any needs, you can talk to me.'
+		}},
+		dan_4={{
+			p='yan prince dan',
+			c='just prepare for the assassination of king qin, if you have any needs, you can talk to me.'
+		}},
 		sleep={{
 			p='',
 			c='slepp now?(pass today)',
@@ -147,8 +193,18 @@ end
 function _draw()
 	cls()
 	bltimer=max(bltimer-1,0)
+	
+	if (p.switchcnt==5)
+	then
+		p.switchcnt=0
+		bltimer=20
+		p.pos=vec2(23,3)
+	end
+	
 	if (bltimer>0)
 	then
+		p.day-=1
+		print("next day",camera_pos.x+48,camera_pos.y+52,7)
 		return
 	end
 	
@@ -170,10 +226,16 @@ function _draw()
 			then
 				p.money=1000
 				p.flag.hastalk=true
+			elseif (last.c==dialogues.dan_3[#dialogues.dan_3].c)
+			then
+				p.flag.know_plan=true
+				grid.house2.show=true
+				grid.tarvern.show=true
+				grid.smith.show=true
 			elseif (p.dialog_oc=='sleep')
 			then
 				p.day-=1
-				bltimer=10
+				bltimer=20
 				return
 			end
 		end
@@ -201,14 +263,31 @@ function move_player()
 	
    pos=vec2(max(0,pos.x),max(0,pos.y))
    
+			--dan   
    if (vec2_eq(pos,vec2(7,16)) and p.flag.hastalk)
    then
-      if (btnp(⬆️)) pos=vec2(7,15)
-      if (btnp(⬇️)) pos=vec2(7,17)
+      if (btnp(⬆️))
+      then
+      	if (p.flag.know_plan) p.switchcnt+=1
+       pos=vec2(7,15)
+      end
+      if (btnp(⬇️))
+      then
+      	if (p.flag.know_plan) p.switchcnt+=1
+       pos=vec2(7,17)
+      end
    end
    --house1	
-   if (vec2_eq(pos,vec2(9,27))) pos=vec2(18,8)
-   if (vec2_eq(pos,vec2(16,8))) pos=vec2(9,28)
+  	if (vec2_eq(pos,vec2(9,27)))
+   then
+   	if (p.flag.know_plan) p.switchcnt+=1
+   	pos=vec2(18,8)
+   end
+   if (vec2_eq(pos,vec2(16,8)))
+   then
+   	if (p.flag.know_plan) p.switchcnt+=1
+   	pos=vec2(9,28)
+   end
    
    local has_action=interact(pos)
    if (has_action) return
@@ -241,7 +320,17 @@ function interact(pos)
 				elseif (p.day==6)
 				then
 					p.dialog=clone(dialogues.dan_2)
+					return true
 				end
+				
+				if (p.flag.hastalk and not p.flag.know_plan)
+				then
+					p.dialog=clone(dialogues.dan_3)
+				end
+				if (p.flag.know_plan)
+				then
+					p.dialog=clone(dialogues.dan_4)
+				end 
 			end
 			
 			if (i=='bed')
