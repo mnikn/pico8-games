@@ -180,7 +180,32 @@ function _init()
 			p='yan prince dan',
 			c='just prepare for the assassination of king qin, if you have any needs, you can talk to me.'
 		}},
-                fan_1={{
+		dan_5={{
+			p='jing ke',
+			c='i heard you have a map of yan.'
+		},{
+			p='yan prince dan',
+			c='...right, what do you want to do?'
+		},{
+			p='jign ke',
+			c='king qin is suspicious by nature and cannot gain his trust with our plan.'
+		},{
+			p='jing ke',
+			c='if i can offer a map of yan and hide dagger in the map, then the success rate of assassinating king qin will be greatly improved.'
+		},{
+			p='yan prince dan',
+			c='however, if the map of yan is presented, it will be easier for qin to attack yan. i cannot take this risk.'
+		},{
+			p='jing ke',
+			c='if the assassination of king qin fails, then the kingdom of yan will eventually perish.'
+		},{
+			p='yan prince dan',
+			c='...well i believe you, i will give you the map, please kill king qin.'
+		},{
+			p='jing ke',
+			c='thanks, i will definitely complete the task!'
+		}},
+  fan_1={{
                       p='jing ke',
                       c='general fan yuqi,i need your help.'
                 }, {
@@ -235,6 +260,154 @@ function _init()
                       p='jing ke',
                       c='i will not forget your sacrifice, and i will fulfill my mission without disgrace!'
                 }},
+  smith={{
+  	p='jing ke',
+  	c='are there any daggers for sale here?'
+  },{
+  	p='smith',
+  	c='we have a poisoned dagger here, as long as it cuts through the body, it will undoubtedly die.'
+  },{
+  	p='smith',
+  	c='but the price is very high.'
+  },{
+  	p='',
+  	c='buy?',
+  	o={'buy(800)','cancel'}
+  }},
+  tarvern_buy={{
+  	p='',
+  	c='',
+  	o={'buy information(100)','cancle'}
+  }},
+  tarvern_1={{
+  	p='tavernkeeper',
+  	c='i heard that general fan yuqi hates king qin very much, and he can accept any means for revenge.'
+  }},
+  tarvern_2={{
+  	p='tavernkeeper',
+  	c='it is rumored that there is a map of  yan on the prince dan.'
+  },{
+  	p='tavernkeeper',
+  	c='if someone get this map, attacking yan will be pretty easy.'
+  }},
+  tarvern_3={{
+  	p='tavernkeeper',
+  	c='i heard that qin wuyang is now on the street and wants to fight with strong man.'
+  }},
+  wuyan_1={{
+  	p='jing ke',
+  	c='excuse me, are you qin wuyang?'
+  },{
+  	p='qing wuyang',
+  	c='exactly! see you are pretty strong, do you want to fight with me?'
+  },{
+  	p='jing ke',
+  	c='no, i want to invite you to assassinate king qin together'
+  },{
+  	p='qing wuyang',
+  	c='the assassination of king qin is not trivial, if you can defeat me, i will join you.'
+  },{
+  	p='jing ke',
+  	c='well, let\'s have a fight!'
+  },{
+  	p='',
+  	c='qin wuyang try to hit your face with a right fist!',
+  	o={'dodge','head on'}
+  }},
+  wuyan_2={{
+  	p='',
+  	c='you avoid qin wuyang\'s right fist, but trip to the ground by qin wuyang\'s feet'
+  },{
+  	p='qing wuyang',
+  	c='your are not strong enough! i won\'t join with people who are not strong.'
+  }},
+  wuayn_3={{
+  	p='',
+  	c='regardless of the pain, you hit your fist while knocking qin wuyang to the ground with one punch.'
+  },{
+  	p='qing wuyang',
+  	c='i have never met someone who can confront me head-on, i am willing to join you.'
+  }},
+  wan_1={{
+  	p='jing ke',
+  	c='king qin your grace! i has something to offer to you today.'
+  },{
+  	p='king qin',
+  	c='oh?what\'s that?'
+  }},
+  wan_2={{
+  	p='qing ke',
+  	c='i heard that you wants to attack yan. i know prince dan very well, so i can get information from him.'
+  },{
+  	p='king qin',
+  	c='hehe, then why didn\'t you bring anything here?'
+  },{
+  	p='king qin',
+  	c='somebody come here! this person is a spy, kill him!'
+  }},
+  wan_3={{
+  	p='qing ke',
+  	c='i heard that fan yuqi has a grudge against you, i can ask him out and let you catch fan yuqi.'
+  },{
+ 		p='king qin',
+ 		c='haha, fan yuqi doesn\'t make friends with the villain.'
+  },{
+  	p='king qin',
+  	c='if you can make an appointment with fan yuqi, then you are lying to me.'
+  },{
+  	p='king qin',
+  	c='somebody come here! this person is a spy, kill him!'
+  }},
+  wan_4={{
+  	p='jing ke',
+  	c='i heard that fan yuqi has a grudge against you, i have fan yuqi\'s head here.'
+  },{
+  	p='king qin',
+  	c='oh? this is true. is there anything else besides this?'
+  }},
+  wan_5={{
+  	p='jing ke',
+  	c='i heard that you wantto attack yan, and i have a map of yan here.'
+  },{
+  	p='king qin',
+  	c='what! ? get it quickly!'
+  },{
+  	p='',
+  	c='jing ke slowly unfolded the map, and king qin\'s eyes gradually became greedy as the map unfolded.'
+  }},
+  wan_6={{
+  	p='',
+  	c='when the map was rolled out to the end, the dagger was exposed.'
+  },{
+  	p='',
+  	c='king qin was shocked. jing ke grabbed king qin\'s hand and wanted to stab him.'
+  },{
+  	p='',
+  	c='unexpectedly, king qin broke free, and then jing ke was killed by the soldiers.'
+  }},
+  wan_7={{
+  	p='',
+  	c='when the map was rolled out to the end, the dagger was exposed.'
+  },{
+  	p='',
+  	c='king qin was taken aback. qin wuyang caught king qin\'s hand. jing ke took the dagger and stab qin king.'
+  },{
+  	p='',
+  	c='but the wound was too shallow and king qin broke free.'
+  },{
+  	p='',
+  	c='then jing ke and qin wuyang were killed by the soldiers.'
+  }},
+  wan_8={{
+  	p='',
+  	c='when the map was rolled out to the end, the dagger was exposed.'
+  },{
+  	p='',
+  	c='king qin was shocked. qin wuyang caught king qin\'s hand. jing ke took the dagger and stab qin king.'
+  },{
+  	p='',
+  	c='the poison on the dagger penetrated into king qin\'s body, and king qin finally died of poison.'
+  }},
 		sleep={{
 			p='',
 			c='slepp now?(pass today)',
@@ -259,7 +432,8 @@ function _draw()
 	if (p.switchcnt==5)
 	then
 		p.switchcnt=0
-		bltimer=20
+		bltimer=40
+		bltimer_text='next day'
 		p.day-=1
 		p.pos=vec2(23,3)
 	end
@@ -313,14 +487,18 @@ function _draw()
 			elseif (last.c==dialogues.fan_2[#dialogues.fan_2].c)
 			then
                            grid.fan.show=false
-                           bltimer=20
+                           grid.house2.show=false
+                           bltimer=40
                            bltimer_text='then fan yuqi went to the hiding place'
+                           p.pos=vec2(6,24)
                            return
 			elseif (last.c==dialogues.fan_3[#dialogues.fan_3].c)
 			then
                            grid.fan.show=false
-                           bltimer=20
+                           grid.house2.show=false
+                           bltimer=40
                            bltimer_text='then fan yuqi commit suicide, jing ke get his head'
+                           p.pos=vec2(6,24)
                            return
 			end
 		end
@@ -375,7 +553,7 @@ function move_player()
       end
 
    
-   if (vec2_eq(pos,grid.house2.pos))
+   if (vec2_eq(pos,grid.house2.pos) and grid.house2.show)
    then
       if (p.flag.know_plan) p.switchcnt+=1
       pos=vec2(39,13)
