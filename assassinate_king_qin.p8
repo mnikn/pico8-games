@@ -342,7 +342,7 @@ function _init()
   	c='well, let\'s have a fight!'
   },{
   	p='',
-  	c='his fist are coming to your face!',
+  	c='his fist coming to you!',
   	o={'dodge','head on'}
   }},
   wuyan_2={{
